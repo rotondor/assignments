@@ -1,0 +1,33 @@
+<!-- 
+
+** Author: Reed Rotondo
+** Date: 20 Oct 2016
+** JSCRIPT 100 B 
+** Description: Age
+
+-->
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Age </title>
+
+</head>
+<body>
+
+
+<script>
+
+  function ageSec() {   // declare a function named ageSec
+    var age = prompt("How old are you?");   // create variable named age, ask the user for input
+    age = Number(((age * 365) * 24) * 60); // convert age to seconds
+    console.log(age);   // print their new age in the console
+  }
+  ageSec(); // run the function ageSec
+
+</script>
+
+
+</body>
+</html>

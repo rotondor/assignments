@@ -1,0 +1,48 @@
+<!-- 
+
+** Author: Reed Rotondo
+** Date: 19 Oct 2016
+** JSCRIPT 100 B 
+** Description: Madlibs
+
+-->
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Mablibs </title>
+  <script>
+
+  	var myMadlib;	// declare a variable named myMadlib 
+
+  	// Create a function named madlib, prompt the user for input, return the text
+  	function madlib() {
+  		exclamation = prompt("Enter an exclamation!");
+  		adverb = prompt("Enter an adverb!");
+  		noun = prompt("Enter a noun!");
+  		adjective = prompt("Enter an adjective");
+  		// return the following combination of strings and variables 
+  		return (exclamation + "! He said " + adverb + " as he jumped into his convertible " + noun + " and drove off with his " + adjective + " wife.");
+  	}
+
+  	// trigger this function when the button is clicked
+  	function output() {
+  		myMadlib = madlib();	// value of myMadlib is the output from madlib()
+  		document.getElementById("output").innerHTML = myMadlib;	// replace the span with myMadlib
+  		console.log(myMadlib);	// also log myMadlib in the console
+  	}
+
+  </script>
+</head>
+<body>
+
+	<!-- Create a button, onclick trigger the function output -->
+	<center>
+	<button style="background-color: orange; color: white; width: 100px; height: 40px; border: 0; font-size: 13px;" onclick="output();">Click Me!</button><br><br>
+
+	<span id="output"></span>
+	</center>
+
+</body>
+</html>

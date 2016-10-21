@@ -1,0 +1,120 @@
+<!-- 
+
+** Author: Reed Rotondo
+** Date: 10 Oct 2016
+** JSCRIPT 100 B 
+** Description: Madlibs
+
+-->
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Coffee </title>
+
+</head>
+<body>
+
+<h3>Coffee</h3>
+  <select id="coffee">
+    <option></option>
+    <option value="Mild" id="mild">Mild</option>
+    <option value="Bold" id="bold">Bold</option>
+    <option value="Decaf" id="decaf">Decaf</option>
+  </select>
+
+<h3>Milk</h3>
+  <select id="milk">
+    <option></option>
+    <option value="Non Fat" id="nonFat">Non Fat</option>
+    <option value="2%" id="twoPer">2%</option>
+    <option value="Whole" id="whole">Whole</option>
+  </select>
+
+<h3>Sweetener</h3>
+  <select id="sweetener">
+    <option></option>
+    <option value="Raw Suger" id="rawSugar">Raw Suger</option>
+    <option value="Sugar" id="sugar">Sugar</option>
+    <option value="Honey" id="honey">Honey</option>
+  </select><br><br>
+
+  <button type="submit" onclick="order();">Submit</button><br><br>
+
+<h3>Your Order</h3>
+  <span id="yourOrder">-</span> - <span id="cost">-</span>
+
+<script>
+
+  function order() {
+    var coffee = document.getElementById("coffee");
+    var milk = document.getElementById("milk");
+    var sweetener = document.getElementById("sweetener");
+
+    var myOrder = (coffee.value + " coffee with " + milk.value + " milk and " + sweetener.value);
+    document.getElementById("yourOrder").innerHTML = myOrder;
+    //money();
+
+    //function money() {
+
+
+
+      if (coffee.value == "Mild") {
+        coffee = Number(1.99);
+      } else if (coffee.value == "Bold") {
+        coffee = Number(1.49);
+      } else if (coffee.value == "Decaf") {
+      	coffee = Number(1.79);
+      } else {
+      	coffee = Number(0);
+      }
+
+      if (milk.value == "Mild") {
+        milk = Number(1.99);
+      } else if (milk.value == "Bold") {
+        milk = Number(1.49);
+      } else if (milk.value == "Decaf") {
+      	milk = Number(1.79);
+      } else {
+      	milk = Number(0);
+      }
+
+      if (sweetener.value == "Mild") {
+        sweetener = Number(1.99);
+      } else if (sweetener.value == "Bold") {
+        sweetener = Number(1.49);
+      } else if (sweetener.value == "Decaf") {
+      	sweetener = Number(1.79);
+      } else {
+      	sweetener = Number(0);
+      }
+
+
+      //milk = Number(.49);
+      //sweetener = Number(.49);
+
+      
+
+      var myCost = ("$" + Math(coffee + milk + sweetener));
+
+      document.getElementById("cost").innerHTML = myCost;
+   // }
+
+    
+  }
+
+  
+
+  function output() {
+    order();
+    
+  }
+
+  
+
+</script>  
+
+
+</body>
+</html>
